@@ -30,20 +30,23 @@
         <div class="mermaid">
             graph TB
             A[Controle op assumpties]
-            B[Maken interactietermen]
-            C[Elke potentiele effectmodificator apart testen]
-            D{Effectmodificator?}
-            E[Elke potentiele confounder apart testen]
-            F{Confounder?}
-            G[Eindanalyse met overgebleven confounders]
+            B[Uitvoeren van ruwe analyses van het hoofdverband]
+            C[Maken interactietermen potentiële effectmodificatoren]
+            D[Elke potentiële effectmodificator apart testen]
+            E{Effectmodificator?}
+            F[Elke potentiele confounder apart testen]
+            G{Confounder?}
+            H[Eindanalyse met effectmodificatoren en confounders]
 
             A --> B
             B --> C
             C --> D
-            D -- Ja --> G
-            D -- Nee --> E
-            E --> F
-            F -- Ja --> G
+            D --> E
+            E -- Ja --> H
+            E -- Nee --> F
+            F --> G
+            G -- Ja --> H
         </div>
     </body>
 </html>
+
