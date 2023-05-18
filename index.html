@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flowchart voor Statistische Analyse</title>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>
+            mermaid.initialize({startOnLoad:true, theme: 'neutral'});
+        </script>
+        <style>
+            body {
+                background-color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .mermaid {
+                display: block;
+                margin: auto;
+                width: 80%;
+                padding: 20px;
+                background-color: #fff;
+                text-transform: lowercase;
+            }
+
+            .mermaid div:first-letter {
+                text-transform: capitalize;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="mermaid">
+            graph TB
+            A[Controleer assumpties voor lineaire regressie]
+            B[2 lineaire regressies voor ruw verband]
+            C[8 lineaire regressies voor effectmodificatoren]
+            D[4 lineaire regressies voor confounders]
+            E[2 uiteindelijke modellen met correcties voor confounders]
+            
+            A --> B
+            B --> C
+            C --> D
+            D --> E
+        </div>
+    </body>
+</html>
