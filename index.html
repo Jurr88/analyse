@@ -29,16 +29,23 @@
     <body>
         <div class="mermaid">
             graph TB
-            A[Controleer assumpties voor lineaire regressie]
-            B[2 lineaire regressies voor ruw verband]
-            C[8 lineaire regressies voor effectmodificatoren]
-            D[4 lineaire regressies voor confounders]
-            E[2 uiteindelijke modellen met correcties voor confounders]
-            
+            A[Controle op assumpties]
+            B[Maken interactietermen]
+            C[Elke potentiele effectmodificator apart testen]
+            D{Effectmodificator?}
+            E[Elke potentiele confounder apart testen]
+            F{Confounder?}
+            G[Eindanalyse met overgebleven confounders]
+
             A --> B
             B --> C
             C --> D
-            D --> E
+            D -- Ja --> G
+            D -- Nee --> E
+            E --> F
+            F -- Ja --> G
+            F -- Nee --> G
         </div>
     </body>
 </html>
+
